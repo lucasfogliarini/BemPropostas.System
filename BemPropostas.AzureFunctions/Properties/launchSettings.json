@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "BemPropostas.AzureFunctions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7237"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 31563,
+      "useSSL": false
+    }
+  }
+}
