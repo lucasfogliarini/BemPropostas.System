@@ -34,6 +34,14 @@
             TaxaJuros = taxaJuros;
             ValorParcela = valorParcela;
             Status = StatusProposta.AprovadaFinanceiramente;
+        }
+
+        public void Aprovar()
+        {
+            if (Status != StatusProposta.AprovadaFinanceiramente)
+                throw new InvalidOperationException("A proposta não pode ser aprovada neste estado.");
+
+            Status = StatusProposta.AprovadaPeloCliente;
             DataAprovacao = DateTime.UtcNow;
         }
 

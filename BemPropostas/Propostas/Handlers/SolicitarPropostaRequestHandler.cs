@@ -8,7 +8,7 @@ public class SolicitarPropostaRequestHandler(IPropostaRepository propostaReposit
     public async Task<SolicitarPropostaResponse> Handle(SolicitarPropostaRequest request, CancellationToken cancellationToken)
     {
         var proposta = new Proposta(request.ClienteId, request.ValorSolicitado, request.Prazo);
-        propostaRepository.Add(proposta);
+        propostaRepository.Database.Add(proposta);
         await propostaRepository.Database.CommitAsync();
         return new SolicitarPropostaResponse(proposta.Id, proposta.Numero, proposta.Status, proposta.DataCriacao);
     }

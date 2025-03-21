@@ -8,11 +8,11 @@ using BemPropostas.Handlers;
 
 namespace BemPropostas.AzureFunctions
 {
-    public class AprovarPropostaFinanceiramenteHttp(IMediator mediator)
+    public class AprovarPropostaHttp(IMediator mediator)
     {
-        [FunctionName(nameof(AprovarPropostaFinanceiramenteHttp))]
+        [FunctionName(nameof(AprovarPropostaHttp))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "propostas/aprovarfinanceiramente")] AprovarPropostaFinanceiramenteRequest request,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "propostas/aprovar")] AprovarPropostaRequest request,
             ILogger log)
         {
             var response = await mediator.Send(request);

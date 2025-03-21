@@ -5,14 +5,29 @@ namespace BemPropostas.Infrastructure;
 
 public class BemPropostasDbContext(DbContextOptions options) : DbContext(options), IDatabase
 {
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        var thisAssembly = Assembly.GetExecutingAssembly();
+        modelBuilder.ApplyConfigurationsFromAssembly(thisAssembly);
+    }
+
     public async Task<int> CommitAsync()
     {
         return await SaveChangesAsync();
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public new void Add(object entity)
     {
-        var thisAssembly = Assembly.GetExecutingAssembly();
-        modelBuilder.ApplyConfigurationsFromAssembly(thisAssembly);
+        base.Add(entity);
+    }
+
+    public new void Update(object entity)
+    {
+        base.Update(entity);
+    }
+
+    public int Commit()
+    {
+        return SaveChanges();
     }
 }
