@@ -1,8 +1,6 @@
-﻿using BemPropostas.Infrastructure;
-using BemPropostas.Repository;
-using BemPropostas;
+﻿using BemPropostas.Propostas.Repository;
 
-namespace Bem.Infrastructure.Repositories;
+namespace BemPropostas.Infrastructure.Repositories;
 
 public class PropostasRepository(BemPropostasDbContext bemPropostasDbContext) : IPropostasRepository
 {

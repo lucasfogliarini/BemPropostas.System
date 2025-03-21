@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BemPropostas.Infrastructure.EntityConfigurations;
 
-public class PropostasConfiguration : IEntityTypeConfiguration<Propostas>
+public class PropostasConfiguration : IEntityTypeConfiguration<Proposta>
 {
-    public void Configure(EntityTypeBuilder<Propostas> builder)
+    public void Configure(EntityTypeBuilder<Proposta> builder)
     {
         builder.HasKey(o => o.Id);
     }

@@ -1,6 +1,6 @@
-﻿namespace BemPropostas.Repository;
+﻿namespace BemPropostas.Propostas.Repository;
 
-public interface IPropostasRepository
+public interface IPropostasRepository : IRepository
 {
     void Add(Proposta proposta);
 }

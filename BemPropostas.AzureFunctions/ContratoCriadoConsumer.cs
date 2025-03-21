@@ -7,9 +7,9 @@ using BemPropostas.Handlers;
 
 namespace BemPropostas.AzureFunctions
 {
-    public class ContratoCriadoFunction(IMediator mediator)
+    public class ContratoCriadoConsumer(IMediator mediator)
     {
-        [FunctionName(nameof(ContratoCriadoFunction))]
+        [FunctionName(nameof(ContratoCriadoConsumer))]
         public void Run(
             [KafkaTrigger("BrokerList",
                           "contrato-criado",
