@@ -8,14 +8,14 @@ using BemPropostas.Handlers;
 
 namespace BemPropostas.AzureFunctions
 {
-    public class CriarPropostaHttp(IMediator mediator)
+    public class SolicitarPropostaHttp(IMediator mediator)
     {
-        [FunctionName(nameof(CriarPropostaHttp))]
+        [FunctionName(nameof(SolicitarPropostaHttp))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "propostas")] CriarPropostaRequest criarPropostaRequest,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "propostas")] SolicitarPropostaRequest request,
             ILogger log)
         {
-            var proposta = await mediator.Send(criarPropostaRequest);
+            var proposta = await mediator.Send(request);
 
             return new OkObjectResult(proposta);
         }

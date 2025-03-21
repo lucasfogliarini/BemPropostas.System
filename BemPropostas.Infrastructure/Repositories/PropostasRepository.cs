@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace BemPropostas.Infrastructure.Repositories;
 
-public class PropostasRepository(BemPropostasDbContext bemPropostasDbContext) : IPropostasRepository
+public class PropostasRepository(BemPropostasDbContext bemPropostasDbContext) : IPropostaRepository
 {
     public IDatabase Database => bemPropostasDbContext;
 

@@ -1,6 +1,6 @@
 ﻿namespace BemPropostas.Propostas.Repository;
 
-public interface IPropostasRepository : IRepository
+public interface IPropostaRepository : IRepository
 {
     void Add(Proposta proposta);
     Task<Proposta?> FindAsync(int id);

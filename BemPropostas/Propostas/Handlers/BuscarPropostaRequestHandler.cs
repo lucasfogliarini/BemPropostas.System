@@ -4,7 +4,7 @@ using MediatR;
 
 namespace BemPropostas.Handlers;
 
-public class BuscarPropostaRequestHandler(IPropostasRepository propostasRepository) : IRequestHandler<BuscarPropostaRequest, Result<BuscarPropostaResponse>>
+public class BuscarPropostaRequestHandler(IPropostaRepository propostasRepository) : IRequestHandler<BuscarPropostaRequest, Result<BuscarPropostaResponse>>
 {
     public async Task<Result<BuscarPropostaResponse>> Handle(BuscarPropostaRequest request, CancellationToken cancellationToken)
     {

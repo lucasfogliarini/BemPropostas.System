@@ -22,24 +22,24 @@
             ClienteId = clienteId;
             ValorSolicitado = valorSolicitado;
             Prazo = prazo;
-            Status = StatusProposta.PropostaCriada;
+            Status = StatusProposta.Solicitada;
             DataCriacao = DateTime.UtcNow;
         }
 
-        public void Aprovar(decimal taxaJuros, decimal valorParcela)
+        public void AprovarFinanceiramente(decimal taxaJuros, decimal valorParcela)
         {
-            if (Status != StatusProposta.EmAnaliseFinanceira)
+            if (Status != StatusProposta.Solicitada)
                 throw new InvalidOperationException("A proposta não pode ser aprovada neste estado.");
 
             TaxaJuros = taxaJuros;
             ValorParcela = valorParcela;
-            Status = StatusProposta.Aprovada;
+            Status = StatusProposta.AprovadaFinanceiramente;
             DataAprovacao = DateTime.UtcNow;
         }
 
         public void Rejeitar()
         {
-            if (Status != StatusProposta.EmAnaliseFinanceira)
+            if (Status != StatusProposta.Solicitada)
                 throw new InvalidOperationException("A proposta não pode ser rejeitada neste estado.");
 
             Status = StatusProposta.Rejeitada;
@@ -53,9 +53,11 @@
 
     public enum StatusProposta
     {
-        PropostaCriada,
-        EmAnaliseFinanceira,
-        Aprovada,
+        Solicitada,
+        //EmAnaliseFinanceira,
+        AprovadaFinanceiramente,        
+        AprovadaPeloCliente,
+        ContratoAssinado,
         Rejeitada,
         Cancelada
     }
