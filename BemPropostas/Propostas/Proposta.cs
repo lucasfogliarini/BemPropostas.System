@@ -2,9 +2,8 @@
 {
     public class Proposta
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Numero { get; private set; }
-        public int ClienteId { get; private set; }
         public decimal ValorSolicitado { get; private set; }
         public int Prazo { get; private set; }
         public decimal TaxaJuros { get; private set; }
@@ -12,7 +11,8 @@
         public StatusProposta Status { get; private set; }
         public DateTime DataCriacao { get; private set; }
         public DateTime? DataAprovacao { get; private set; }
-        public Cliente Cliente { get; private set; }
+        //public Cliente Cliente { get; private set; }
+        public int ClienteId { get; private set; }
 
         private Proposta() { }
 

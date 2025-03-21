@@ -10,7 +10,8 @@ namespace BemPropostas.AzureFunctions
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Proposta>());
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<IRepository>());
+            builder.Services.AddInfrastructure();
         }
     }
 }
