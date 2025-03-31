@@ -1,0 +1,6 @@
+@BemPropostas.WebApi_HostAddress = http://localhost:5287
+
+GET {{BemPropostas.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
