@@ -1,10 +1,10 @@
-﻿using BemPropostas.AzureFunctions;
+﻿using BemPropostas.Consumers;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 [assembly: FunctionsStartup(typeof(Startup))]
 
-namespace BemPropostas.AzureFunctions
+namespace BemPropostas.Consumers
 {
     public class Startup : FunctionsStartup
     {

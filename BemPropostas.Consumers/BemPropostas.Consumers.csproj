@@ -29,4 +29,10 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\lucas.fogliarini\.nuget\packages\microsoft.azure.webjobs.extensions.kafka\3.9.0\build\cacert.pem" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\lucas.fogliarini\.nuget\packages\microsoft.azure.webjobs.extensions.kafka\3.9.0\build\cacert.pem" />
+  </ItemGroup>
 </Project>
